@@ -1,11 +1,39 @@
 package co.nelo.clabe.parser;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class SpeiInstitution {
-    static final HashMap<String, SpeiInstitution> INSTITUTIONS_MAP = createInstitutionsMap();
+    protected static final Map<String, SpeiInstitution> INSTITUTIONS_MAP = createInstitutionsMap();
 
-    private static HashMap<String, SpeiInstitution> createInstitutionsMap() {
+    private String id;
+    private String shortName;
+    private String detail;
+
+    private SpeiInstitution(
+            String id,
+            String shortName,
+            String detail
+    ) {
+        this.id = id;
+        this.shortName = shortName;
+        this.detail = detail;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    private static Map<String, SpeiInstitution> createInstitutionsMap() {
         HashMap<String, SpeiInstitution> institutionsMap = new HashMap<>();
 
         institutionsMap.put("002", new SpeiInstitution(
@@ -477,13 +505,18 @@ public class SpeiInstitution {
         return institutionsMap;
     }
 
-    private String id;
-    private String shortName;
-    private String detail;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SpeiInstitution that = (SpeiInstitution) o;
+        return Objects.equals(id, that.getId()) &&
+                Objects.equals(shortName, that.getShortName()) &&
+                Objects.equals(detail, that.getDetail());
+    }
 
-    private SpeiInstitution(String id, String shortName, String detail) {
-        this.id = id;
-        this.shortName = shortName;
-        this.detail = detail;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, shortName, detail);
     }
 }

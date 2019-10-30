@@ -2,6 +2,9 @@
 .gradle
 .idea
 gradle/
+clabe-parser.iml
+clabe-parser.ipr
+clabe-parser.iws
 
 # Ignore Gradle build output directory
 build
