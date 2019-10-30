@@ -8,7 +8,7 @@ This library is a simple interface for parsing and validating [Clave Bancaria Es
 # Usage
 
 ### Parsing
-```$java
+```java
 import co.nelo.clabe.parser.*;
 ...
 
@@ -24,7 +24,7 @@ System.out.println(parsedClabe.getInstitution().getShortName();  // Throws an er
 
 ### Validation
 The `isValid` method can be used to check whether a full CLABE is valid.
-```$java
+```java
 import co.nelo.clabe.parser.*;
 ...
 
@@ -39,7 +39,7 @@ println(isValid)  // prints "false" due to check digit mismatch
 
 ### Partial Validation
 The `isPartiallyValid` method can be used to check whether a partially entered CLABE is valid.
-```$java
+```java
 import co.nelo.clabe.parser.*;
 ...
 
