@@ -49,5 +49,5 @@ jobs:
           path: /home/circleci/repo/build/reports/jacoco/test/html
           destination: coverage
       - codecov/upload:
-          file: /home/circleci/repo/build/reports/jacocoHtml/jacocoTestReport.xml
+          file: /home/circleci/repo/build/reports/jacoco/test/jacocoTestReport.xml
           token: c5835957-b64e-4aa5-9742-fe9d2da9009f
